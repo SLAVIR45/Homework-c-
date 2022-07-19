@@ -153,12 +153,10 @@ void Lesson_15()
 
 Console.WriteLine("Enter number");
 int num = Convert.ToInt32(Console.ReadLine());
-
-if (num > 0 && num <= 7)
     
-     if  (num == 6 || num == 7) 
+if  (num == 6 || num == 7) 
      Console.WriteLine(num + " Weekend");
-     else
+else if (num >= 1 && num <=5)
      Console.WriteLine(num + " Working day");
 
 else 
@@ -168,4 +166,4 @@ Console.WriteLine(num + " is not a number of the week");
 
 
 
-Lesson_13();
+
