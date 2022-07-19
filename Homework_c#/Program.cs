@@ -1,11 +1,99 @@
 ﻿Console.Clear();
-/*
-Lesson_10 (Задача 10: Напишите программу, которая принимает на вход 
- трёхзначное число и на выходе показывает вторую цифру этого числа.)
 
-Lesson_13 (Напишите программу, которая с помощью деления 
-    выводит третью цифру заданного числа или сообщает, что третьей цифры нет.)
+
+
+
+void Lesson_2()
+/*
+ Напишите программу, которая на вход принимает два числа и выдаёт,
+ какое число большее, а какое меньшее
 */
+
+
+Console.WriteLine("Enter the first number");
+int numberOne = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the second number");
+int numberTwo = Convert.ToInt32(Console.ReadLine());
+
+if (numberOne > numberTwo) 
+{
+    Console.WriteLine("max = " + numberOne + " " + "min = " + numberTwo);
+}
+else
+{
+    Console.WriteLine("max = " + numberTwo + " " + "min = " + numberOne);
+}
+
+
+void Lesson_4()
+
+/*
+Напишите программу, которая принимает на вход три числа 
+и выдаёт максимальное из этих чисел.
+*/
+
+
+Console.WriteLine("Enter the first number");
+int numberOne = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the second number");
+int numberTwo = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the third number");
+int numberThree = Convert.ToInt32(Console.ReadLine());
+
+if (numberTwo < numberOne && numberOne > numberThree)
+{
+    Console.WriteLine("max = " + numberOne);
+}
+else if (numberOne < numberTwo && numberTwo > numberThree)
+{
+    Console.WriteLine("max = " + numberTwo);
+}
+else
+{
+    Console.WriteLine("max = " + numberThree);
+}
+
+void Lesson_6()
+
+/*
+Напишите программу, которая на вход принимает число и выдаёт, 
+является ли число чётным (делится ли оно на два без остатка).
+*/
+
+
+Console.WriteLine("Enter the first number");
+int numberOne = Convert.ToInt32(Console.ReadLine());
+
+if (numberOne % 2 == 0)
+{
+    Console.WriteLine("Number " + numberOne + " even");
+}
+else
+{
+    Console.WriteLine("Number " + numberOne + " odd");
+}
+
+
+void Lesson_8()
+
+/*
+Напишите программу, которая на вход принимает число (N),
+ а на выходе показывает все чётные числа от 1 до N.
+*/
+
+Console.WriteLine("Enter number");
+int number = Convert.ToInt32(Console.ReadLine());
+
+ Console.WriteLine("list of even numbers: "); 
+for ( int i = 1 ; i<=number ; i++ )
+     {
+        if (i % 2 == 0)
+        {
+            Console.Write(i + " "); 
+        }
+
+     }
+
 
 
 void Lesson_10()
