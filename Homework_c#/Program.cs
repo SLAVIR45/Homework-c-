@@ -128,16 +128,21 @@ void Lesson_13()
 Console.WriteLine("Enter number");
 int num = Convert.ToInt32(Console.ReadLine());
 int Tens;
+num = Math.Abs(num);
+if (num < 100)
+{
+    Console.WriteLine("Третьей цифры нет");
+}
+else 
+ {
+    while (num > 999)
+    {   
+    num /= 10;
+    }
+    Console.WriteLine("Третья цифра числа: " + num %10);
+}
+}
 
-if (num / 100 > 0) 
-{
-    Console.WriteLine(Tens = num % 100 % 10);
-}
- else 
-{
-    Console.WriteLine("The third numbers is missing");  
-}
-}
 
 void Lesson_15()
 {
@@ -163,5 +168,4 @@ Console.WriteLine(num + " is not a number of the week");
 
 
 
-
- 
+Lesson_13();
