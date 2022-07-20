@@ -198,7 +198,7 @@ void Lesson_19()
 }
 
 
-//void Lesson_21()
+void Lesson_21()
 {
     /*
     Напишите программу, которая принимает на вход координаты 
@@ -227,5 +227,27 @@ void Lesson_19()
                                 Math.Pow(zz, 2));
     double otvet = Math.Round(distance,2);
     Console.WriteLine($"\nDistanse = {otvet}");
+    
+}
+
+
+void Lesson_23()
+{
+/*
+Напишите программу, которая принимает на вход число (N)
+ и выдаёт таблицу кубов чисел от 1 до N.
+*/
+
+    Console.WriteLine("Enter five-digit number");
+    int num = Convert.ToInt32(Console.ReadLine());
+    int i = 1;
+    
+
+    while ( i <= num)
+    {
+        double cub = Math.Pow(i, 3);
+        Console.Write(cub + " ");
+        i++;
+    }
     
 }
