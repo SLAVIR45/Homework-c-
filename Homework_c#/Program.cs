@@ -198,4 +198,34 @@ void Lesson_19()
 }
 
 
+//void Lesson_21()
+{
+    /*
+    Напишите программу, которая принимает на вход координаты 
+    двух точек и находит расстояние между ними в 3D пространстве.
+    */
 
+    Console.WriteLine("Enter the coordinates of first point");
+    int x1 = Convert.ToInt32(Console.ReadLine());
+    int y1 = Convert.ToInt32(Console.ReadLine());
+    int z1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"point one: [{x1};{y1};{z1}]");
+
+    Console.WriteLine("Enter the coordinates of second point");
+    int x2 = Convert.ToInt32(Console.ReadLine());
+    int y2 = Convert.ToInt32(Console.ReadLine());
+    int z2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"point two: [{x2};{y2};{z2}]");
+
+    int xx =  (x2 - x1);
+    int yy =  (y2 - y1);
+    int zz =  (z2 - z1);
+
+
+    double distance = Math.Sqrt(Math.Pow(xx, 2) +
+                                Math.Pow(yy, 2) +
+                                Math.Pow(zz, 2));
+    double otvet = Math.Round(distance,2);
+    Console.WriteLine($"\nDistanse = {otvet}");
+    
+}
