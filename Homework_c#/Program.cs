@@ -249,5 +249,34 @@ void Lesson_23()
         Console.Write(cub + " ");
         i++;
     }
+}
     
+
+void Lesson_25()
+{
+/*
+Используя определение степени числа, напишите цикл, который принимает на вход 
+два натуральных числа (A и B) и возводит число A в степень B.
+*/
+
+Console.WriteLine("Enter number one");
+int num_one = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter number two");
+int num_two = Convert.ToInt32(Console.ReadLine());
+int step = num_one;
+int i = 1;
+
+if (num_two == 0)
+    {  
+        Console.WriteLine($"число {num_one} в степни {num_two} = 1 ");
+    }
+else
+    {
+        while ( i < num_two)
+            {
+            step = step * num_one;
+            i++;
+            }
+        Console.WriteLine($"число {num_one} в степни {num_two} = {step} ");
+    }            
 }
