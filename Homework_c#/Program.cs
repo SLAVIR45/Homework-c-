@@ -300,4 +300,39 @@ while (num > 0)
 Console.WriteLine($"сумма цифр числа {temp} = {sum}");
 
 }
-Lesson_27();
+
+
+void Lesson_29()
+{
+/*
+Напишите программу, которая задаёт массив из 8 случайных 
+целых чисел и выводит отсортированный по модулю массив.
+*/
+
+int [] array = new int [8];
+Random rand = new Random();
+
+for (int i = 0 ; i < 8; i++)
+    {
+        array[i] = rand.Next(1,100);
+        Console.Write(array[i] + " ");
+    }
+Console.WriteLine();
+
+for (int count = 0 ; count <= array.Length - 1 ; count++)
+    {
+        int min = count;
+        for (int j = count + 1; j < array.Length; j++)
+            {
+                if (array[j] < array[min])
+                    {
+                    min = j; 
+                    }
+            }
+        int temp = array[count];
+        array[count] = array[min];
+        array[min] = temp;
+        Console.Write(array[count] + " ");
+    }
+}
+Lesson_29();
