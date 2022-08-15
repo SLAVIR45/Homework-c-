@@ -45,7 +45,7 @@ else
 {
     double x0 = (b2 -b1) / (k1-k2);
     double y0 = (k1 * x0)  + b1;
-    Console.WriteLine($"точка пересечения прямых {x0}; {y0}");
+    Console.WriteLine($"точка пересечения прямых {Math.Round(x0,2)}; {Math.Round(y0,2)}");
 }
 }
 
@@ -54,4 +54,4 @@ else
 
 
 //Lesson_41();
-//Lesson_43();
+Lesson_43();
