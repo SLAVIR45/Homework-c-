@@ -16,7 +16,52 @@ void Lesson_47()
     double [,] array = new double [rows,columns];
     random_double_array(array,-10,10);
     print_double_array(array);
+    
 }
+
+
+
+
+void Lesson_50()
+{
+    /*
+    Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+    и возвращает значение этого элемента или же указание, что такого элемента нет.
+    */
+
+    int rows = 5;
+    int columns = 5;
+    int [,] array = new int [rows,columns];
+    Random rand = new Random();
+
+    for (int i = 0 ; i < array.GetLength(0); i++)
+    {
+        for (int j = 0 ; j < array.GetLength(1); j++)
+        {
+              array[i,j] = rand.Next(0, 10);
+               Console.Write(array[i,j] + "\t");
+        }
+         Console.WriteLine();  
+    }
+    Console.WriteLine ("Введиете позицию элемента ");
+    Console.WriteLine ("Строка");
+    int rows_user = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine ("Столбец");
+    int columns_user = Convert.ToInt32(Console.ReadLine());
+    if ((rows_user-1)< 0 || (rows_user-1) > array.GetLength(0) || (columns_user-1)< 0 || (columns_user-1) > array.GetLength(1)  )
+    {
+        Console.WriteLine("Элемент не существует");
+    }
+    else 
+    {
+        Console.WriteLine ($"Значение элемента массива {array[rows_user-1,columns_user-1]}");
+    }
+}
+
+
+
+
+
 
 
 void random_double_array (double[,] array, int start_number = -20 , int finish_number = 20)
@@ -91,4 +136,5 @@ void print_array (int [,] array)
     
 }
 
-Lesson_47();
+//Lesson_47();
+Lesson_50();
