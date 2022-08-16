@@ -62,6 +62,42 @@ void Lesson_50()
 
 
 
+void Lesson_52()
+{
+    /*
+    Задайте двумерный массив из целых чисел.
+    Найдите среднее арифметическое элементов в каждом столбце.
+    */
+
+    Console.WriteLine("Eenter the number of rows");
+    int rows = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("enter the number of columns");
+    int columns = Convert.ToInt32(Console.ReadLine());
+
+    int [,] array = new int [rows,columns];
+    random_array(array, 0, 10);
+    print_array(array);
+    arithmetic_mean_of_columns(array);
+}
+
+
+
+void arithmetic_mean_of_columns (int [,] array)
+{
+    int count = 0;
+    double sum = 0;
+    for (int j = 0 ; j < array.GetLength(1); j++)
+    {
+        for (int i = 0 ; i < array.GetLength(0); i++)
+        {
+            sum += array[i,j];
+        }
+        Console.WriteLine ($"Среднеарефметическое столбца {++count} = {Math.Round(sum / (array.GetLength(1)), 2)}"); 
+        sum = 0;  
+    }
+}
+
 
 
 void random_double_array (double[,] array, int start_number = -20 , int finish_number = 20)
@@ -138,3 +174,4 @@ void print_array (int [,] array)
 
 //Lesson_47();
 //Lesson_50();
+Lesson_52();
