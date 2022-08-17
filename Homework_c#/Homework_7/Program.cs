@@ -33,28 +33,21 @@ void Lesson_50()
     int columns = 5;
     int [,] array = new int [rows,columns];
     Random rand = new Random();
-
-    for (int i = 0 ; i < array.GetLength(0); i++)
-    {
-        for (int j = 0 ; j < array.GetLength(1); j++)
-        {
-              array[i,j] = rand.Next(0, 10);
-               Console.Write(array[i,j] + "\t");
-        }
-         Console.WriteLine();  
-    }
+    random_array(array);
+    print_array(array);
+    
     Console.WriteLine ("Введиете позицию элемента ");
     Console.WriteLine ("Строка");
     int rows_user = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine ("Столбец");
     int columns_user = Convert.ToInt32(Console.ReadLine());
-    if ((rows_user-1)< 0 || (rows_user-1) > array.GetLength(0) || (columns_user-1)< 0 || (columns_user-1) > array.GetLength(1)  )
+    if (rows_user > 0 && rows_user <= rows || columns_user > 0 && columns_user <=columns )
     {
-        Console.WriteLine("Элемент не существует");
+        Console.WriteLine ($"Значение элемента массива {array[rows_user-1,columns_user-1]}");
     }
     else 
     {
-        Console.WriteLine ($"Значение элемента массива {array[rows_user-1,columns_user-1]}");
+        Console.WriteLine("Элемент не существует");
     }
 }
 
@@ -173,5 +166,5 @@ void print_array (int [,] array)
 }
 
 //Lesson_47();
-//Lesson_50();
-Lesson_52();
+Lesson_50();
+//Lesson_52();
