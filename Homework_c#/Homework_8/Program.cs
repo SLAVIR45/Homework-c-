@@ -19,10 +19,56 @@ void Lesson_54()
     print_array(array);
     ordering_an_array_rows(array);
     print_array(array);
+}
 
+
+
+void Lesson_56()
+{
+    /*
+    Задайте прямоугольный двумерный массив. 
+    Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+    */
+    Console.WriteLine("Eenter the number of rows");
+    int rows = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("enter the number of columns");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    
+    int [,] array = new int [rows,columns];
+    random_array(array,0,10);
+    print_array(array);
+    summ( array);
 
 
 }
+
+void summ (int [,] array)
+{
+    int count = 0;
+    int sum = 0;
+    int min_sum = 0;
+    int min_rows = 0;
+    for (int i = 0 ; i < array.GetLength(0); i++)
+    {
+        sum = 0;  
+        for (int j = 0 ; j < array.GetLength(1); j++)
+        {
+            sum += array[i,j];
+        }
+        Console.WriteLine ($"Сумма элементов строки  {++count} = {sum}"); 
+        if (sum > min_sum)
+        {
+            min_sum = sum;
+            min_rows = i;
+        }
+        
+    }
+    Console.WriteLine ($"Сумма  элементов минимальной сроки {min_rows} = {min_sum}"); 
+}
+
+
+
 
 
 void ordering_an_array_rows(int [,] array)
@@ -90,4 +136,5 @@ void print_array (int [,] array)
 }
 
 
-Lesson_54();
+//Lesson_54();
+Lesson_56();
