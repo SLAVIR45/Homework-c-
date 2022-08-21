@@ -45,9 +45,7 @@ void Lesson_56()
 
 void summ (int [,] array)
 {
-    
     int sum = 0;
-
     int [] arr_summ = new int [array.GetLength(0)];
     for (int k = 0 ; k < array.GetLength(0); k++) {}
     
@@ -61,9 +59,6 @@ void summ (int [,] array)
             arr_summ[i] = sum;
             Console.WriteLine ($"Сумма элементов строки  {i} = {sum}");
         } 
-          
-    
-    
     {
         int min_sum = arr_summ[0]; 
         int position = 0;
