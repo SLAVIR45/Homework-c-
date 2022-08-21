@@ -47,24 +47,35 @@ void summ (int [,] array)
 {
     int count = 0;
     int sum = 0;
-    int min_sum = 0;
-    int min_rows = 0;
-    for (int i = 0 ; i < array.GetLength(0); i++)
+
+    int [] arr_summ = new int [array.GetLength(0)];
+    for (int k = 0 ; k < array.GetLength(0); k++)
     {
-        sum = 0;  
-        for (int j = 0 ; j < array.GetLength(1); j++)
+        for (int i = 0 ; i < array.GetLength(0); i++)
         {
-            sum += array[i,j];
-        }
-        Console.WriteLine ($"Сумма элементов строки  {++count} = {sum}"); 
-        if (sum > min_sum)
-        {
-            min_sum = sum;
-            min_rows = i;
-        }
-        
+            sum = 0;
+            for (int j = 0 ; j < array.GetLength(1); j++)
+            {
+                sum += array[i,j];
+            }
+            arr_summ[k] = sum;
+            Console.WriteLine ($"Сумма элементов строки  {k} = {sum}"); 
+        } 
     }
-    Console.WriteLine ($"Сумма  элементов минимальной сроки {min_rows} = {min_sum}"); 
+ void min_sum (int [] arr_summ)
+ {
+     int min_sum = arr_summ[0]; 
+     int position = 0;
+    for (int i = 0 ; i < arr_summ.Length; i++ )
+    {
+        if (arr_summ[i] < min_sum) 
+        {
+            min_sum = arr_summ[i];
+            position = i;
+        }
+    }
+    Console.WriteLine ($"Строка {position} имеет минимальную суму элементов {min_sum}");
+ }
 }
 
 
