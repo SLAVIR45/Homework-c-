@@ -45,12 +45,12 @@ void Lesson_56()
 
 void summ (int [,] array)
 {
-    int count = 0;
+    
     int sum = 0;
 
     int [] arr_summ = new int [array.GetLength(0)];
-    for (int k = 0 ; k < array.GetLength(0); k++)
-    {
+    for (int k = 0 ; k < array.GetLength(0); k++) {}
+    
         for (int i = 0 ; i < array.GetLength(0); i++)
         {
             sum = 0;
@@ -58,25 +58,27 @@ void summ (int [,] array)
             {
                 sum += array[i,j];
             }
-            arr_summ[k] = sum;
-            Console.WriteLine ($"Сумма элементов строки  {k} = {sum}"); 
+            arr_summ[i] = sum;
+            Console.WriteLine ($"Сумма элементов строки  {i} = {sum}");
         } 
-    }
- void min_sum (int [] arr_summ)
- {
-     int min_sum = arr_summ[0]; 
-     int position = 0;
-    for (int i = 0 ; i < arr_summ.Length; i++ )
+          
+    
+    
     {
-        if (arr_summ[i] < min_sum) 
+        int min_sum = arr_summ[0]; 
+        int position = 0;
+        for (int i = 0 ; i < arr_summ.Length; i++ )
         {
-            min_sum = arr_summ[i];
-            position = i;
+            if (arr_summ[i] < min_sum) 
+            {
+                min_sum = arr_summ[i];
+                position = i;
+            }
         }
+        Console.WriteLine ($"Строка {position} имеет минимальную суму элементов {min_sum}");
     }
-    Console.WriteLine ($"Строка {position} имеет минимальную суму элементов {min_sum}");
- }
 }
+
 
 
 
