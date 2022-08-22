@@ -15,18 +15,46 @@ void Lesson_64 ()
     Console.WriteLine("Enter the number n");
     int n = Convert.ToInt32(Console.ReadLine());
     Console.Write ("Числа кратные 3: ");
-    Recurcia (m,n);
+    Recurcia_64 (m,n);
 }
 
-void Recurcia (int m , int n )
+void Lesson_66 ()
+{
+     /*
+     Задайте значения M и N. Напишите программу, 
+     которая найдёт сумму натуральных элементов в промежутке от M до N.
+    */
+
+    Console.WriteLine("Enter the number m");
+    int m = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Enter the number n");
+    int n = Convert.ToInt32(Console.ReadLine());
+   
+    Recurcia_66 (m,n);
+    Console.Write ($"Сумма чисел от {m} до {n}: {Recurcia_66(m,n)} ");
+}
+
+
+int Recurcia_66 (int m , int n , int sum = 0)
+    {
+        if ( m > n) return sum ;
+        sum += m;
+        m ++;
+        return Recurcia_66(m,n, sum);
+       
+    }
+
+void Recurcia_64 (int m , int n )
     {
         if ( m > n) return;
         if (m % 3 == 0)
         Console.Write (m + ", ");
         m++;
-        Recurcia(m,n);
+        Recurcia_64(m,n);
     }
 
 
 
-Lesson_64 ();
+//Lesson_64 ();
+Lesson_66 ();
