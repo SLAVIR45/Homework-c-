@@ -77,6 +77,50 @@ void summ (int [,] array)
 
 
 
+void Lesson_58 ()
+{
+    int rows = 4;
+    int colums = 4;
+    int[,] array = new int[rows, colums];
+    int row = 0;
+    int col = 0;
+    int dx = 0;
+    int dy = 1;
+    int gran = colums;
+    int dirChanges = 0;
+ 
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[row, col] = i + 1;
+        if (--gran == 0)
+        {
+            gran = rows - 1 - dirChanges / 2;
+            int temp = dx;
+            dx= dy;
+            dy = -temp;
+            dirChanges++;
+         }
+        row += dx;
+        col += dy;
+    }
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < colums; j++)
+        {
+            Console.Write(array[i, j] + " \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+
+
+
+
+
+
 
 
 void ordering_an_array_rows(int [,] array)
@@ -136,7 +180,7 @@ void print_array (int [,] array)
     {
         for (int j = 0 ; j < columns; j++)
         {
-             Console.Write (array[i,j] + "\t" );
+             Console.Write (array[i,j] + " \t" );
         }
          Console.WriteLine();
     }
@@ -145,4 +189,5 @@ void print_array (int [,] array)
 
 
 //Lesson_54();
-Lesson_56();
+//Lesson_56();
+Lesson_58();
